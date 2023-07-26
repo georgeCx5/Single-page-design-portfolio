@@ -41,12 +41,13 @@ export default {
         </p>
       </div>
     </header>
-    <main class=" flex flex-col gap-24 w-full max-w-[425px] TB:max-w-[1024px] DT:max-w-[1920px] mb-10">
-      <section class=" grid grid-cols-2 TB:grid-cols-4 DT:grid-cols-6 gap-6 px-4 TB:px-10 DT:px-[165px]">
+    <main
+      class=" flex flex-col gap-[6.25rem] TB:gap-[7.5rem] DT:gap-0 w-full max-w-[425px] TB:max-w-[1024px] DT:max-w-[1920px] mb-10 TB:mb-14">
+      <section class=" grid grid-cols-2 TB:grid-cols-4 DT:grid-cols-6 gap-6 DT:mb-[8.5rem] px-4 TB:px-10 DT:px-[165px]">
         <MainGrid v-for="index in 6" :data-index="index - 1" />
       </section>
       <section
-        class=" flex flex-col TB:flex-row DT:items-center gap-10 TB:gap-[69px] DT:gap-[125px] px-4 TB:px-10 DT:px-[165px]">
+        class=" flex flex-col TB:flex-row DT:items-center gap-10 TB:gap-[69px] DT:gap-[125px] DT:mb-[5.5rem] px-4 TB:px-10 DT:px-[165px]">
         <img class=" TB:h-[364px] DT:h-[445px] TB:-ml-[84px] DT:ml-0 px-6 TB:p-0 select-none" :src="imgAmy" alt="imgAmy"
           draggable="false">
         <div class=" flex flex-col items-center TB:items-start gap-6 DT:gap-9">
@@ -63,7 +64,7 @@ export default {
           <BtnManager :isMain="true" />
         </div>
       </section>
-      <section>
+      <section class=" DT:mb-[5.5rem]">
         <GallerySlider />
       </section>
       <section class=" px-4 TB:px-10 DT:px-[165px]">
@@ -78,7 +79,7 @@ export default {
               during a free consultation. Then we can move forward from there.
             </p>
           </div>
-          <BtnManager :is-main="true" />
+          <BtnManager class=" DT:mr-8" :is-main="true" />
         </article>
       </section>
     </main>

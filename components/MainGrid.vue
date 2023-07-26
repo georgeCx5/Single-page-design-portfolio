@@ -44,7 +44,7 @@ export default {
                icon: pMotionGraphics,
                text: 'Motion Graphics',
                bgColor: 'bg-neo-purple',
-               gridTemplate: 'col-span-2 DT:order-last gap-10',
+               gridTemplate: 'col-span-2 DT:order-last gap-10 DT:gap-4',
             },
          ]
       }
