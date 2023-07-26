@@ -19,7 +19,8 @@ export default {
 }
 </script>
 <template>
-   <button :class="` w-[176px] h-11 ${getColor} text-neo-transparent text-[14px] leading-7 font-bold rounded-[28px] select-none`">
+   <button
+      :class="` w-[176px] TB:w-[228px] h-11 TB:h-14 ${getColor} text-neo-transparent text-[.875rem] TB:text-[1rem] leading-7 font-bold rounded-[28px] select-none`">
       Free Consultation
    </button>
 </template>

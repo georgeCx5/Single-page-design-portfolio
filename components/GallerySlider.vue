@@ -1,5 +1,7 @@
+<script setup>
+import { vAutoAnimate } from '@formkit/auto-animate'
+</script>
 <script>
-import ImageActive from './ImageActive.vue'
 import ArrowDirection from './ArrowDirection.vue'
 
 export default {
@@ -15,19 +17,20 @@ export default {
          countArr: [
             0,
             1,
-            2
+            2,
+            3,
+            4
          ]
       }
    },
    components: {
-      ImageActive,
       ArrowDirection,
    },
    methods: {
       increaseValue() {
          for (let i = 0; i < this.countArr.length; i++) {
             this.countArr[i] += 1
-            if (this.countArr[i] >= this.data.length) {
+            if (this.countArr[i] >= this.countArr.length) {
                this.countArr[i] = 0
             }
          }
@@ -36,23 +39,27 @@ export default {
          for (let i = 0; i < this.countArr.length; i++) {
             this.countArr[i] -= 1
             if (this.countArr[i] < 0) {
-               this.countArr[i] = this.data.length - 1
+               this.countArr[i] = this.countArr.length - 1
             }
+         }
+      },
+      setVisibility(value) {
+         if (value >= this.countArr.length - 1 || value <= 0) {
+            return 'invisible'
          }
       }
    }
 }
 </script>
 <template>
-   <div class=" flex flex-col items-center gap-8 overflow-hidden">
-      <h2 class=" text-[24px] leading-[30px] font-bold">
+   <div class=" flex flex-col items-center gap-8 TB:gap-14 overflow-hidden">
+      <h2 class=" text-[24px] TB:text-[32px] leading-[30px] TB:leading-[40px] font-bold">
          My Work</h2>
-      <div class=" flex gap-4 w-[840px] h-[180px]">
-         <ImageActive :data-index="countArr[0]" />
-         <ImageActive :data-index="countArr[1]" />
-         <ImageActive :data-index="countArr[2]" />
+      <div v-auto-animate class=" relative flex gap-4 TB:gap-[30px] w-[375%] TB:w-[367%] DT:w-[195%] h-[180px] TB:h-[360px]">
+         <div v-for="(count, index) in countArr" :key="count"
+            :class="` w-full h-full ${data[count]} bg-cover bg-center rounded-lg ${setVisibility(index)}`"></div>
       </div>
-      <div class=" flex gap-4 w-36 h-16">
+      <div @keydown.left="decreaseValue" @keydown.right="increaseValue" class=" flex gap-4 w-36 h-16">
          <ArrowDirection @click="decreaseValue" direction="left" />
          <ArrowDirection @click="increaseValue" direction="right" />
       </div>

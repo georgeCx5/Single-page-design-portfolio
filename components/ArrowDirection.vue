@@ -22,7 +22,7 @@ export default {
 }
 </script>
 <template>
-   <button class=" flex justify-center items-center w-full h-full bg-neo-black hover:bg-neo-blue rounded-full select-none">
+   <button class=" flex justify-center items-center w-full h-full bg-neo-black hover:bg-neo-blue focus:outline-none rounded-full select-none">
       <img :src="getDirection" alt="arrow">
    </button>
 </template>

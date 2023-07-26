@@ -14,6 +14,6 @@ export default {
 }
 </script>
 <template>
-   <img class=" h-12 select-none" :src="logo" alt="logo" draggable="false">
+   <img class=" h-12 TB:h-16 select-none" :src="logo" alt="logo" draggable="false">
    <BtnManager :isMain="false" />
 </template>
